@@ -15,23 +15,28 @@
 <body>
     <div class="page-wrapper">
         <header class="header__container">
-            <div class="logo-text">
-                <p>crowdfund</p>
+            <div class="nav__container">
+                <div class="logo">
+                    <a href="#"><img class="logo-img" src="./assets/logo.svg" alt="crowdfund-logo"></a>
+                </div>
+                <nav class="topnav">
+                    <div class="topnav__icon" onclick="Show()">
+                        <i class="topnav__icon-open"><img src="./assets/icon-hamburger.svg" alt="humburger"></i>
+                    </div>
+                    <ul class="topnav__links">
+                        <li class=" topnav__icon-close"><span onclick="Hide()"><img src="./assets/icon-close-menu.svg" alt="close"></span>
+                        </li>
+                        <li><a class="nav-link border-top" href="#about">About</a></li>
+                        <li><a class="nav-link" href="#discover">Discover</a></li>
+                        <li><a class="nav-link border-bottom" href="#getstarted">Get Started</a></li>
+                    </ul>
+                    </nav>
             </div>
-            <nav class="topnav">
-                <a href="#about">About</a>
-                <a href="#discover">Discover</a>
-                <a href="#getstarted">Get Started</a>
-
-                <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-
-                </a> -->
-            </nav>
         </header>
 
         <main class="container">
             <div class="top__container">
-                <img class="top__logo-img" src="" alt="">
+                <img class="top__logo-img" src="./assets/logo-mastercraft.svg" alt="logo-mastercraft">
                 <h1 class="top__title">Mastercraft Bamboo Monitor Riser</h1>
                 <p class="top__text"></p>
                 <div class="top__button">
@@ -44,7 +49,7 @@
 
             <div class="progress__container">
                 <div class="progress__stats">
-                    <div class="progress__stats-money-collected">
+                    <div class="progress__stats-money">
                         <p class="number">$89,914</p>
                         <p class="text">of $100,000 backed</p>
                     </div>
@@ -87,8 +92,8 @@
                     <p class="options__text">You get an ergonomic stand made of natural bamboo. You've helped us launch
                         our promotional campaign, and you’ll be added to a special Backer member list.</p>
                     <div class="options__bottom">
-                        <p class="number options__bottom-left">101<span class="small">left</span></p>
-                        <button class="options-button optins__bottom-right">Select reward</button>
+                        <p class="number options__bottom-left">101<span class="text-small">left</span></p>
+                        <button class="options-button options__bottom-right">Select reward</button>
                     </div>
                 </div>
 
@@ -101,11 +106,11 @@
                         You’ll be added to our Backer member list. Shipping is included.</p>
                     <div class="options__bottom">
                         <p class="number options__bottom-left">64<span class="small">left</span></p>
-                        <button class="options-button optins__bottom-right">Select reward</button>
+                        <button class="options-button options__bottom-right">Select reward</button>
                     </div>
                 </div>
 
-                <div class="options options-black">
+                <div class="options options-mahagony">
                     <div class="options options-top">
                         <h3 class="options__title">Mahagony Special Edition</h3>
                         <h4 class="options__pledge">Pledge $200 or more</h4>
@@ -114,13 +119,23 @@
                         personal thank you. You’ll be added to our Backer member list. Shipping is included. </p>
                     <div class="options__bottom">
                         <p class="number options__bottom-left">0<span class="small">left</span></p>
-                        <button class="options-button optins__bottom-right">Out of stock</button>
+                        <button class="options-button options__bottom-right">Out of stock</button>
                     </div>
                 </div>
             </div>
 
         </main>
     </div>
+<script>
+    var navList = document.querySelector("topnav__links");
+    function Show() {
+        navList.classList.add("_Menus-show");
+    }
+
+    function Hide() {
+        navList.classList.remove("_Menus-show");
+    }
+</script>
 </body>
 
 </html>
