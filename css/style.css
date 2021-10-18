@@ -225,6 +225,10 @@ img {
     color:var(--neutral-darkGray);
   }
 
+  .top__button-right.bookmarked::after{
+    color:var(--primary-darkCyan);
+  }
+
   .top__button-right{    
     border-radius: 2rem;
     width:10.875rem;
@@ -243,6 +247,10 @@ img {
   }
   .bookmark-icon:hover{
     background-image: url('../assets/icon-bookmark-light.svg');
+  }
+
+  .bookmark-icon.bookmarked{
+    background-image: url('../assets/icon-bookmark-bookmarked.svg');
   }
 /*top end*/
 
@@ -486,7 +494,10 @@ img {
 
     .show {
       display:flex;
-      margin-top: -2rem;
+      margin-top: -2rem;      
+    }
+    .nav-shown{
+      background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
     }
   .hide{
     display: none;
@@ -531,7 +542,7 @@ img {
   .top__button-right{
     width:4.5rem;
     background:none;
-  }
+  } 
   
   .progress__container{
     

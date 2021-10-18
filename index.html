@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper js-page">
         <header class="header__container">
             <div class="nav__container">
                 <div class="logo">
@@ -41,8 +41,8 @@
                 <p class="top__text">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div class="top__button">
                     <button class="top__button-left">Back this project</button>
-                    <button class="top__button-right">
-                        <span class="bookmark-icon"></span>
+                    <button class="top__button-right js-bookmark">
+                        <span class="bookmark-icon js-icon"></span>
                     </button>
 
                 </div>
@@ -126,10 +126,93 @@
                         </div>
                         </div>
             </div>
-
+            <div class="modal-default" id="getstarted">
+                <div class="close-modal"><img src="./assets/icon-close-modal.svg" alt="close-modal"></div>
+                <div class="modal__top">
+                    <h2 class="modal__top-title">Back this project</h2>
+                    <p class="modal__top-text">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+                    </p>
+                </div>
+                <div class="modal__options-form">
+                    <div class="modal__option">
+                        <div class="modal__option-top">
+                            <input class="modal__option-input" type="radio" name="pledge" id="noreward">
+                            <label class="modal__option-label" for="noreward">Pledge with no reward</label>
+                            <p class="modal__option-text">Choose to support us without a reward if you simply believe in our
+                                project. As a backer, you will be signed up to receive product updates via email.</p>
+                        </div>
+                    </div>
+                    <div class="modal__option">
+                        <div class="modal__option-top">
+                            <div>
+                                <input class="modal__option-input" type="radio" name="pledge" id="bamboo-stand">
+                                <label class="modal__option-label" for="bamboo-stand">Bamboo Stand</label>
+                                <div>
+                                    <h3 class="options__pledge">Pledge $25 or more</h3>
+                                    <p class="number options__bottom-left">101 <span class="small text">left</span></p>
+                                </div>
+                            </div>
+            
+                            <p class="modal__option-text">You get an ergonomic stand made of natural bamboo. You've helped us launch
+                                our promotional
+                                campaign, and you’ll be added to a special Backer member list.</p>
+                            </div>
+                            <hr class="hr-line">
+                            <div class="modal__option-bottom">
+                                <label class="text" for="bamboo-amount">Enter your pledge</label>
+                                <span class="dolar-sign">&#36;
+                                    <input class="amount-input js-amount" type="text" name="bamboo-amount" id="bamboo-amount">
+                                </span>
+                                <button class="continue-btn js-continue">Continue</button>
+                            </div>
+                            </div>
+                            <div class="modal__option">
+                                <div class="modal__option-top">
+                                    <div>
+                                        <input class="modal__option-input" type="radio" name="pledge" id="black-stand">
+                                        <label class="modal__option-label" for="black-stand">Black Edition Stand</label>
+                                        <div>
+                                            <h3 class="options__pledge">Pledge $75 or more</h3>
+                                            <p class="number options__bottom-left">64 <span class="small text">left</span></p>
+                                        </div>
+                                    </div>
+                            
+                                    <p class="modal__option-text">You get a Black Special Edition computer stand and a personal thank you. You’ll be
+                                        added to our Backer member list. Shipping is included.
+                                    </p>
+                                </div>
+                                <hr class="hr-line">
+                                <div class="modal__option-bottom">
+                                    <label class="text" for="black-amount">Enter your pledge</label>
+                                    <span class="dolar-sign">&#36;
+                                        <input class="amount-input js-amount" type="text" name="black-amount" id="black-amount">
+                                    </span>
+                                    <button class="continue-btn js-continue">Continue</button>
+                                </div>
+                            </div>
+                            <div class="modal__option options-mahagony">
+                                <div class="modal__option-top">
+                                    <div>
+                                        <input class="modal__option-input" type="radio" name="pledge" id="mahagony-stand">
+                                        <label class="modal__option-label" for="mahagony-stand">Mahagony Special Edition</label>
+                                        <div>
+                                            <h3 class="options__pledge">Pledge $200 or more</h3>
+                                            <p class="number options__bottom-left">0 <span class="small text">left</span></p>
+                                        </div>
+                                    </div>
+                            
+                                    <p class="modal__option-text">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal
+                                        thank you. You’ll be added to our Backer member list. Shipping is included.
+                                    </p>
+                                </div>
+                            
+                            </div>
+                            </div>
+                            </div>
         </main>
     </div>
 <script src="./js/navbar.js"></script>
+<script src="./js/bookmarked.js"></script>
 </body>
 
 </html>
