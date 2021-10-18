@@ -1,9 +1,16 @@
 :root{
+
+  --main-background: hsla(0, 0%, 98%, 1);
   --primary-cyan:hsl(176, 50%, 47%);
   --primary-darkCyan:hsl(176, 72%, 28%);
   --neutral-black:#000;
   --neutral-darkGray:hsl(0, 0%, 48%);
   --neutral-white:#FFFFFF;
+  --secondary-gray: hsla(0, 0%, 44%, 1);
+  --primary-border:1px solid hsla(0, 0%, 0%, 0.05);
+  --inner-border:1px solid hsla(0, 29%, 48%, 0.15);
+
+
   font-family: 'Commissioner', sans-serif;
   font-size: 16px;
 }
@@ -25,6 +32,8 @@ img {
   width:100%;
   margin:inherit;
   padding: inherit;
+  background-color:var(--main-background) ;
+  
 }
   
 .header__container{
@@ -99,7 +108,7 @@ img {
 .nav-link {    
   text-decoration: none; 
   display: block;
-  /* color:var(--neutral-white); */
+  color:var(--neutral-white);
   font-size: 0.8125rem;
   font-weight: 500;
   text-align: center;
@@ -146,12 +155,14 @@ img {
 }
 /*nav bar end*/
 
+/*top start*/
   .container{
     display:flex;
     flex-direction: column;
     /* justify-content: center; */
     width:100%;
     align-items: center;
+    gap:1.625rem;
   }
   .top__container{
     max-width: 45.625rem;
@@ -163,11 +174,10 @@ img {
     justify-content: center;
     align-items: center; 
     border-radius: 0.5rem;
+    border: var(--primary-border);
   }
   .top__logo-img{
-    margin-top: -1.5rem;
-    /* height: 56px;
-    width: 56px; */
+    margin-top: -1.5rem;   
     align-self: center;
   }
   .top__title{
@@ -188,12 +198,22 @@ img {
     justify-content: space-between;    
     width:100%;
     padding:2.5rem 2.8125rem;
+    
+  }
+  .top__button>button:hover{
+    cursor: pointer;
   }
   .top__button-left{
     border-radius: 2rem;
     width:12.75rem;
     background-color:var(--primary-cyan);
     color: var(--neutral-white);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .top__button-left:hover{
+    background-color: var(--primary-darkCyan);
   }
   .top__button-right{
     border-radius: 2rem;
@@ -205,19 +225,83 @@ img {
     font-size: 1rem;
     gap:1rem;
     font-weight: 700;
-  }
+  }  
   .bookmark-icon{
-    
+    background-image: url('../assets/icon-bookmark.svg');
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-size: cover;
+  }
+  .bookmark-icon:hover{
+    background-image: url('../assets/icon-bookmark-light.svg');
+  }
+/*top end*/
+
+/*progress statistics start*/
+  .progress__container{
+    border: var(--primary-border);
+    border-radius: 0.5rem;
+    max-width: 45.625rem;
+    display: flex;
+    flex-direction: column;    
+    flex: 1;
+    padding: 3rem;
+    margin-left:-6.25rem;
+    gap:2rem;
+    background-color: var(--neutral-white);
+  }
+  .progress__stats{
+    display: flex;
+    flex-direction: row;    
+  }
+  .progress__stats>div{
+    width:14.875rem;
+    text-align: left;
+    gap:0.5rem;
+    line-height: 1.25;  
+  }
+  
+  .number{
+    font-size: 2rem;
+    font-weight: 700;      
+  }
+  .text{
+    font-size: 0.9375rem;
+    color:var(--neutral-darkGray);
+    font-weight: 400;    
+  }
+  .progress__stats-backers{
+    padding-left: 48px;
+    border-left:var(--inner-border);
+    border-right:var(--inner-border) ;
+  }
+  .progress__stats-days{
+    padding-left: 48px;
+  }
+  .progress__bar{
+    max-width: 39.625rem;
+    height: 0.75rem;
+  }
+  .progress__bar-label{
+    display:none;
+  }
+  
+  meter {    
+    width: 100%;
+    height: 1.5rem;    
   }
 
-  .progress__container{}
-  .progress__stats{}
-  .progress__stats-money{}
-  .number{}
-  .text{}
-  .progress__stats-backers{}
-  .progress__stats-days{}
-  .progress__bar{}
+  meter::-webkit-meter-bar{
+    background-color: hsla(0, 0%, 18%, 0.05);
+    border:none;
+  }
+  meter::-webkit-meter-optimum-value, meter::-webkit-meter-suboptimum-value,
+  meter::-webkit-meter-even-less-good-value{
+    background-color: var(--primary-cyan);
+  }
+/*progress statistics end*/
+
 
   .options__container{}
   .about{}
@@ -292,6 +376,9 @@ img {
       height: 70px;
       border: 1px solid hsla(0, 0%, 0%, 0.05);
       color: var(--neutral-black);
+      font-size: 1.125;
+      padding:1.5rem;
+      font-weight: 500;
     } 
 
     .border-top{
