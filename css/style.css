@@ -167,13 +167,13 @@ img {
   }
   .top__container{
     max-width: 45.625rem;
-    max-height: 16rem;    
+    max-height: 17.75rem;    
     margin-top: -4.5rem;
     background-color: var(--neutral-white);
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     border-radius: 0.5rem;
     border: var(--primary-border);
   }
@@ -218,17 +218,22 @@ img {
   .top__button-left:hover{
     background-color: var(--primary-darkCyan);
   }
-  .top__button-right{
+  .top__button-right::after{
+    content:'Bookmark';
+    font-size: 1rem;
+    font-weight: 700;
+    color:var(--neutral-darkGray);
+  }
+
+  .top__button-right{    
     border-radius: 2rem;
     width:10.875rem;
     background-color: hsla(0, 0%, 18%, 0.05); 
     display:flex;
     align-items: center; 
-    color:var(--neutral-darkGray);
-    font-size: 1rem;
-    gap:1rem;
-    font-weight: 700;
+    gap:1rem;    
   }  
+
   .bookmark-icon{
     background-image: url('../assets/icon-bookmark.svg');
     display: inline-block;
@@ -242,7 +247,7 @@ img {
 /*top end*/
 
 /*progress statistics start*/
-  .progress__container{
+  .progress__container{   
     border: var(--primary-border);
     border-radius: 0.5rem;
     max-width: 45.625rem;
@@ -261,6 +266,8 @@ img {
   .progress__stats>div{
     width:14.875rem;
     text-align: left;
+    display: flex;
+    flex-direction: column;
     gap:0.5rem;
     line-height: 1.25;  
   }
@@ -402,15 +409,17 @@ img {
     }
   }
   
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: 768px) {
     .header__container{
       background-image: url(../assets/image-hero-mobile.jpg);
-      height:300px;
+      height:18.75rem;
     }
+    /*navigation start*/
     .nav__container{
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-      justify-content: space-between;     
+      justify-content: space-between;  
+      margin-top: -1.5rem;   
     }
     .nav__container .logo{
       -webkit-box-flex: 1;
@@ -441,7 +450,6 @@ img {
     -o-transition: left .3s;
     transition: left .3s;
     }
-
     
     .nav-link{
       text-align: left;
@@ -472,20 +480,136 @@ img {
     .topnav__icon-open{
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex;     
+      display: flex;    
+      margin-top: 1.5rem; 
     }
 
     .show {
       display:flex;
+      margin-top: -2rem;
     }
   .hide{
     display: none;
   }
+  /*navigation end*/
   
   .container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 10px;
+    max-width: 43.75rem;   
+    padding:1.5rem;
+  }
+  .top__container{    
+    height: 100%;     
+    margin-left: 1.5rem;
+    margin-right: 1.5rem; 
+    justify-content: center;     
+  }
+  .top__logo-img{
+    margin-top: 0;
+  }
+  .top__button-right::after{
+    content:'';
+  }
+
+  .top__title{
+    margin:1.5rem 4rem 1rem;    
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .top__text{
+    text-align: center;
+    padding:0 1.5rem;
+    font-size: 0.875;
+    line-height: 1.75;
+  }
+
+  .top__button{    
+    gap:0.5rem;      
+    justify-content: center;    
+  }
+
+  .top__button-right{
+    width:4.5rem;
+    background:none;
   }
   
+  .progress__container{
+    
+    margin:0;
+    padding:2rem 1.5rem 2.5rem;
+  }
+
+  .progress__stats{
+    flex-direction: column;
+    padding:0 3rem;
+    justify-content: space-evenly;
+  }
+
+  .progress__stats>div{
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+  .progress__stats>div.progress__stats-money{
+    padding-top: 0;
+  }
+
+  .progress__stats-backers{
+    padding:0;
+    border-left:none;
+    border-right:none ;    
+  }
+
+  .progress__stats-backers::after,
+  .progress__stats-backers::before {
+    content: ""; 
+    display: block; 
+    margin: 0 auto; 
+    width: 35%;    
+    border-bottom: var(--inner-border)
+}
+
+.progress__stats-backers::after{
+  padding-top: 0.75rem; 
+}
+.progress__stats-backers::before {
+  padding-bottom: 0.75rem;
+}
+
+  .progress__stats>div.progress__stats-days{
+    padding-bottom: 0;
+  }
+
+  .text{
+    font-size: 0.875rem;
+  }
+  
+  .options__container{
+    padding: 3rem 1.5rem;
+    gap:2.1875;
+  }
+
+  .about{
+    gap:1.5rem;
+  }
+
+  .about__title{
+    font-size: 1.125rem;
+  }
+
+  .options{
+    padding:1.5rem;
+  }
+
+  .options-top, .options__bottom{
+    flex-direction: column;
+    align-items: flex-start;
+    gap:0.5rem;
+  }
+
+  .options__title{
+    font-size: 0.9375rem;
+  }
+  .options__bottom{
+    gap:1.5rem;
+  }
 }
