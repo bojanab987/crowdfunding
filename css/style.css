@@ -371,7 +371,7 @@ img {
     color: var(--neutral-black);
   }
   .options__pledge{
-    font-size: 0.9375rem;
+    font-size: 1rem;
     text-align: right;
     font-weight: 500;
     color: var(--primary-cyan);
@@ -411,7 +411,212 @@ img {
     opacity: 50%;
   }
 /*backer options end*/
-  @media only screen and (max-width:875px){
+
+/*Back this project modal start*/
+.modal-default{
+  visibility:hidden;
+  opacity:0;
+  position:absolute;
+  top:148px;
+  bottom:0;  
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition:all .4s;
+}
+
+.modal-default:target{
+  visibility:visible;
+  opacity: 1;
+}
+.modal-content{
+  position:relative;  
+  display: flex;
+  top:148px;
+  flex-direction: column;  
+  border: var(--primary-border);
+  background-color: var(--neutral-white);
+  padding: 3rem;
+  border-radius: 0.5rem;
+  max-width: 45.625rem;
+}
+.close-modal{
+  position: absolute;
+  top:2rem;
+  right:2rem;  
+  color:var(--neutral-black);
+  opacity:0.4;
+}
+.close-modal:hover{
+  opacity:1;
+  cursor: pointer;
+} 
+
+.modal__top{ 
+  margin-top:-1rem;
+}
+.modal__top-title{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.modal__top-text{
+  padding: 1rem 0 2rem;
+  font-size: 1rem;
+  line-height: 1.875;
+}
+.modal__options-form{
+  display:flex;
+  flex-direction: column;
+  gap:1.5rem;
+}
+.modal__option{
+  border-radius: 0.5rem;
+  border:var(--options-border);
+  padding: 2rem 1.75rem;
+}
+.modal__option-top{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;  
+}
+.default-input{
+  position:absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.modal__option-input{  
+  height: 1.5rem;
+  width:1.5rem;
+  background-color: var(--neutral-white);
+  border-radius: 50%;
+  border:var(--options-border);
+}
+
+.modal__option-input:hover{
+  border-color: var(--primary-cyan);
+}
+
+.modal__option-input::after{
+  content:"";
+  display: none;
+  border-radius: 50%;
+  height:0.75rem;
+  width:0.75rem;
+  background-color: var(--primary-cyan);
+}
+.default-input:checked~.modal__option-input::after{
+  display: inline-block;
+  margin-top:0.325rem;
+  margin-left:0.325rem;
+}
+
+.modal__option-label{  
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 1.5rem;
+  vertical-align: middle;  
+}
+
+.modal__option-label:hover{
+  cursor: pointer;
+  color: var(--primary-cyan);
+}
+
+.modal__option-text{
+  line-height: 1.87;
+  padding-top:1rem;
+  padding-left:3.25rem;
+}
+.modal-pledge{
+  font-size: 1rem;
+  line-height: 1.25;
+  padding-left: 1rem;  
+}
+.modal-number{ 
+  justify-self: flex-end;
+  line-height: 1.22;
+  font-size: 1.125rem;
+  font-weight: 700;  
+}
+.first{
+  padding-left:12rem;
+}
+.second{
+  padding-left: 10rem;
+}
+.third{
+  padding-left: 7rem;
+}
+
+.hr-line{
+  border:1px solid hsla(0, 0%, 0%, 0.15);
+  margin-left:-1.65rem;
+  width: 110%;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+.modal__option-bottom{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal__option-bottom-right{
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+}
+.amount-input,.continue-btn{
+  width: 6.6875rem;
+  height: 3rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.input-box{  
+  position: relative;
+}
+.dolar-sign{
+  color:var(--neutral-darkGray);
+  position: absolute; 
+  display: block; 
+  left: 1.5rem; 
+  top: 0.9375rem; 
+  z-index: 9; 
+  opacity: 0.25;
+  font-size: 0.875rem;
+}
+.amount-input{
+  color: var(--neutral-black);
+  display:block;
+  border:var(--options-border);
+  padding: 0.9375rem;
+  padding-left: 2.5rem;
+  caret-color: var(--primary-cyan);
+}
+
+.amount-input:focus{
+  outline:none;
+}
+.amount-input:hover,.amount-input:active, .amount-input:focus-visible{
+  border-color: var(--primary-cyan);
+  cursor: pointer;
+}
+.continue-btn{
+  color:var(--neutral-white);
+  background-color: var(--primary-cyan);  
+}
+.continue-btn:hover{
+  background-color: var(--primary-darkCyan);
+  cursor: pointer;
+}
+.hidden{
+  display:none;
+}
+/*Back this project modal end*/
+
+@media only screen and (max-width:875px){
     .nav__container{
       padding:0 1.5rem;
     }
