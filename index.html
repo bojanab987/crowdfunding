@@ -26,9 +26,9 @@
                     <ul class="topnav__links js-navlinks">
                         <li class="topnav__icon-close js-close"><span><img src="./assets/icon-close-menu.svg" alt="close"></span>
                         </li>
-                        <li><a class="nav-link border-top" href="#about">About</a></li>
-                        <li><a class="nav-link" href="#discover">Discover</a></li>
-                        <li><a class="nav-link border-bottom" href="#getstarted">Get Started</a></li>
+                        <li><a class="nav-link border-top js-nav-link" href="#about">About</a></li>
+                        <li><a class="nav-link js-nav-link" href="#discover">Discover</a></li>
+                        <li><a class="nav-link border-bottom js-nav-link js-back-project" href="#getstarted">Get Started</a></li>
                     </ul>
                 </nav>
             </div>
@@ -40,7 +40,7 @@
                 <h1 class="top__title">Mastercraft Bamboo Monitor Riser</h1>
                 <p class="top__text">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
                 <div class="top__button">
-                    <button class="top__button-left"><a class="link" href="#getstarted">Back this project</button></a>
+                    <button class="top__button-left"><a class="link js-back-project" href="#getstarted">Back this project</button></a>
                     <button class="top__button-right js-bookmark">
                         <span class="bookmark-icon js-icon"></span>
                     </button>
@@ -84,7 +84,7 @@
                         computer to allow notepads, pens, and USB sticks to be stored under the stand.
                     </p>
                 </div>
-                <div class="options-subcontainer">
+                <div class="options-subcontainer" id="discover">
                     <div class="options options-bamboo">
                         <div class="options-top">
                             <h3 class="options__title">Bamboo Stand</h3>
@@ -217,7 +217,14 @@
                     </div>
                     </div>
         </div>
-        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-completed js-modal-completed">
+            <div class="icon-checked"><img src="./assets/icon-check.svg" alt="checked-icon"></div>
+            <h1 class="modal-completed-title">Thanks for your support!</h1>
+            <p class="modal-completed-text text">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor
+                Riser worldwide. You will get an email once our campaign is completed.</p>
+            <button class="modal-completed-btn">Got it!</button>
+        </div>
+        <div class="modal-overlay js-modal-overlay" id="modal-overlay"></div>
 <script src="./js/navbar.js"></script>
 <script src="./js/bookmarked.js"></script>
 <script src="./js/modals.js"></script>

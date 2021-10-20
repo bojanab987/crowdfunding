@@ -416,7 +416,7 @@ body{
 /*backer options end*/
 
 /*Back this project modal start*/
-.modal-default{
+.modal-default, .modal-completed{
   visibility: hidden;
   opacity: 0;
   position:absolute;
@@ -427,11 +427,16 @@ body{
   justify-content: center;
   flex-direction: column;
   transition:all .4s;
+  z-index:110;
 }
 
 .modal-default:target{
   visibility:visible;
   opacity: 1;
+  z-index: 120;
+}
+.modal-visible{
+  background-color: var(--neutral-white);
 }
 .modal-content{
   position:relative;  
@@ -574,7 +579,7 @@ body{
   flex-direction: row;
   gap:1rem;
 }
-.amount-input,.continue-btn{
+.amount-input,.continue-btn, .modal-completed-btn{
   width: 6.6875rem;
   height: 3rem;
   border-radius: 2rem;
@@ -611,21 +616,16 @@ body{
   border-color: var(--primary-cyan);
   cursor: pointer;
 }
-.continue-btn{
+.continue-btn, .modal-completed-btn{
   color:var(--neutral-white);
   background-color: var(--primary-cyan);  
 }
-.continue-btn:hover{
+.continue-btn:hover, .modal-completed-btn:hover{
   background-color: var(--primary-darkCyan);
   cursor: pointer;
 }
 
-/* .modal-open-shadow{  
-  opacity: 49.88%;
-} */
-
-.modal-overlay {
-  z-index: 50;
+.modal-overlay {  
   position: fixed;
   top: 0;
   left: 0;
@@ -634,7 +634,39 @@ body{
   display:none;
 }
 
+.modal-shown{
+  z-index: 50;
+  background: hsla(0, 0%, 0%, 0.4988);
+  background-blend-mode: overlay;
+  background-size: cover;
+  display:flex;
+ 
+}
 /*Back this project modal end*/
+
+/*Modal completed start*/
+.visible{
+  visibility:visible;
+  opacity: 1;
+  border: var(--primary-border);
+  background-color: var(--neutral-white);
+  border-radius: 0.5rem;
+  max-width: 33.75rem;
+  padding: 3rem;
+  justify-content: space-between;
+  z-index: 104;
+}
+.modal-completed-title{
+  font-size: 1.5rem;
+  color:var(--neutral-black);
+}
+
+.modal-completed-text{
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.875rem;
+}
+/*Modal completed end*/
 
 @media only screen and (max-width:875px){
   .nav__container{
@@ -695,9 +727,11 @@ body{
       color: var(--neutral-black);
       font-size: 1.125rem;
       padding:1.5rem;
-      font-weight: 500;
-      z-index: 110;
+      font-weight: 500;     
     } 
+    .nav-link:visited{
+      color: var(--neutral-black);
+    }
 
     .border-top{
       border-top-left-radius: 8px;
@@ -726,6 +760,7 @@ body{
       margin-top: -2rem;      
     }
     .nav-shown{
+      z-index: 50;
       background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.0001) 100%);
       background-blend-mode: overlay;
       background-size: cover;
