@@ -1,8 +1,20 @@
 const modalEl = document.querySelector('.js-modal-default');
-const pageEl = document.querySelector('.js-page');
 
-// if (!modalEl.hidden) {
-//     pageEl.classList.add('modal-open-shadow')
-// } else {
-//     pageEl.classList.remove('modal-open-shadow')
-// }
+const backProjectLinks = document.querySelectorAll('.js-back-project')
+
+const closeModalEl = document.querySelector('.js-close-modal')
+
+backProjectLinks.forEach(link => {
+    link.addEventListener('click', openDefaultModal())
+});
+
+function openDefaultModal() {
+    modalEl.classList.add('modal-visible');
+    overlay.classList.add('modal-shown');
+
+}
+
+closeModalEl.addEventListener('click', () => {
+    modalEl.classList.remove('modal-visible');
+    overlay.classList.remove('modal-shown')
+})
