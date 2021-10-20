@@ -5,7 +5,9 @@ const closeModalEl = document.querySelector('.js-close-modal');
 const radioBtns = document.querySelectorAll('.js-radio-btn');
 const modalCompleted = document.querySelector('.js-modal-completed');
 const closeCompletedModaldBtn = document.querySelector('.js-got-it');
-
+const totalDonationAmountEl = document.querySelector('.js-total-donation');
+const totalBackersEl = document.querySelector('.js-total-backers');
+const progressBarEl = document.querySelector('.js-progress-bar');
 
 const openModal = () => {
     modalEl.classList.add('modal-visible')
@@ -44,7 +46,26 @@ function validateNumber(e) {
     return pattern.test(e.key);
 }
 
+let totalDonations = parseInt(totalDonationAmountEl.innerText.slice(1).replace(",", ""));
+let totalBackers = parseInt(totalBackersEl.innerText.replace(",", ""));
 
+function incrementBackers() {
+    totalBackers++;
+    totalBackersEl.innerText = totalBackers.toString();
+    return totalBackers;
+}
+
+const dolarSign = "$";
+function increaseDonationAmount(amount) {
+    console.log(amount)
+    totalDonations += Number(amount)
+    totalDonationAmountEl.innerText = `${dolarSign}${totalDonations}`;
+    return totalDonations;
+}
+
+function increaseProgress() {
+    progressBarEl.value = totalDonations;
+}
 
 function handleDonation() {
     const inputEls = document.querySelectorAll(`.js-amount`)
@@ -93,28 +114,4 @@ function closeDefaultModal() {
 function openCompletedModal() {
     modalCompleted.classList.add('visible');
     overlay.classList.add('modal-shown');
-}
-
-
-const totalDonationAmountEl = document.querySelector('.js-total-donation');
-const totalBackersEl = document.querySelector('.js-total-backers');
-const progressBarEl = document.querySelector('.js-progress-bar');
-
-let totalDonations = parseInt(totalDonationAmountEl.innerText.slice(1).replace(",", ""));
-let totalBackers = parseInt(totalBackersEl.innerText.replace(",", ""));
-function incrementBackers() {
-    totalBackers++;
-    totalBackersEl.innerText = totalBackers.toString();
-    return totalBackers;
-}
-const dolarSign = "$";
-function increaseDonationAmount(amount) {
-    console.log(amount)
-    totalDonations += Number(amount)
-    totalDonationAmountEl.innerText = `${dolarSign}${totalDonations}`;
-    return totalDonations;
-}
-
-function increaseProgress() {
-    progressBarEl.value = totalDonations;
 }
