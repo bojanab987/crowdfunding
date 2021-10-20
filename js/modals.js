@@ -8,6 +8,8 @@ const closeCompletedModaldBtn = document.querySelector('.js-got-it');
 const totalDonationAmountEl = document.querySelector('.js-total-donation');
 const totalBackersEl = document.querySelector('.js-total-backers');
 const progressBarEl = document.querySelector('.js-progress-bar');
+const selectBambooBtn = document.querySelector('.js-select-reward-bamboo');
+const selectBlackBtn = document.querySelector('.js-select-reward-black');
 
 const openModal = () => {
     modalEl.classList.add('modal-visible')
@@ -115,3 +117,15 @@ function openCompletedModal() {
     modalCompleted.classList.add('visible');
     overlay.classList.add('modal-shown');
 }
+
+selectBambooBtn.addEventListener('click', () => {
+    radioBtns[1].setAttribute('checked', 'true');
+    showPledgeDonationForm();
+    openModal();
+})
+
+selectBlackBtn.addEventListener('click', () => {
+    radioBtns[2].setAttribute('checked', 'true');
+    showPledgeDonationForm();
+    openModal();
+})
