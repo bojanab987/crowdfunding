@@ -483,6 +483,9 @@ body{
   border:var(--options-border);
   padding: 2rem 1.75rem;
 }
+.selected-pledge{
+  border-color: var(--primary-cyan);
+}
 .modal__option-top{
   display:flex;
   flex-direction: row;
@@ -570,6 +573,10 @@ body{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.on-selected{
+  width:100%;
 }
 .hidden{
   display: none;
@@ -931,8 +938,12 @@ body{
     padding-top:1rem;    
   }
   .modal-number{
-    order:6;
+    order:5;
     padding-left: 0;
+  }
+
+  .on-selected{
+    order:6;
   }
 
   .modal__option-bottom{

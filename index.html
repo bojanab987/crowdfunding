@@ -28,7 +28,7 @@
                         </li>
                         <li><a class="nav-link border-top js-nav-link" href="#about">About</a></li>
                         <li><a class="nav-link js-nav-link" href="#discover">Discover</a></li>
-                        <li><a class="nav-link border-bottom js-nav-link js-back-project" href="#getstarted">Get Started</a></li>
+                        <li><a class="nav-link border-bottom js-nav-link js-start" href="#getstarted">Get Started</a></li>
                     </ul>
                 </nav>
             </div>
@@ -141,7 +141,7 @@
             <div class="modal__options-form">
                 <div class="modal__option">
                     <div class="modal__option-top">
-                        <input class="default-input" type="radio" name="pledge" id="noreward">
+                        <input class="default-input js-radio-btn" type="radio" name="pledge" id="noreward" onchange="showPledgeDonationForm()">
                         <span class="modal__option-input"></span>
                         <label class="modal__option-label" for="noreward">Pledge with no reward</label>
                         <p class="modal__option-text text">
@@ -150,10 +150,25 @@
                             receive product updates via email.
                             </p>
                     </div>
+                    <div class="on-selected hidden">
+                        <hr class="hr-line">
+                        <div class="modal__option-bottom">
+                            <label class="text" for="noreward-amount">Enter your pledge</label>
+                            <div class="modal__option-bottom-right">
+                                <div class="input-box">
+                                    <input class="amount-input js-amount js-amount-0" type="text" name="noreward-amount"
+                                        id="noreward-amount" onkeypress="return validateNumber(event)">
+                                    <span class="dolar-sign">&#36; </span>
+                                </div>
+                                <button class="continue-btn js-continue" onclick="handleDonation()">Continue</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal__option">
+                </div>
+                <div class="modal__option">
                         <div class="modal__option-top">
-                            <input class="default-input" type="radio" name="pledge" id="bamboo-stand">
+                            <input class="default-input js-radio-btn" type="radio" name="pledge" id="bamboo-stand"
+                                onchange="showPledgeDonationForm()">
                             <span class="modal__option-input"></span>
                             <label class="modal__option-label" for="bamboo-stand">Bamboo Stand</label>
                             <h3 class="options__pledge modal-pledge">Pledge $25 or more</h3>
@@ -164,21 +179,25 @@
                             to a special Backer member list.
                             </p>
                     </div>
-                    <hr class="hr-line hidden">
-                    <div class="modal__option-bottom hidden">
+                    <div class="on-selected hidden">
+                        <hr class="hr-line">
+                        <div class="modal__option-bottom">
                         <label class="text" for="bamboo-amount">Enter your pledge</label>
                         <div class="modal__option-bottom-right">
                             <div class="input-box">
-                                <input class="amount-input js-amount" type="text" name="bamboo-amount" id="bamboo-amount">
+                                <input class="amount-input js-amount js-amount-25" type="text" name="bamboo-amount" id="bamboo-amount"
+                                    onkeypress="return validateNumber(event)">
                                 <span class="dolar-sign">&#36; </span>
-                                </div>
-                                <button class="continue-btn js-continue">Continue</button>
-                                </div>
-                                </div>
-                                </div>
-                    <div class="modal__option">
-                        <div class="modal__option-top">
-                            <input class="default-input" type="radio" name="pledge" id="black-stand">
+                            </div>
+                            <button class="continue-btn js-continue" onclick="handleDonation()">Continue</button>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="modal__option">
+                                <div class="modal__option-top">
+                            <input class="default-input js-radio-btn" type="radio" name="pledge" id="black-stand"
+                                onchange="showPledgeDonationForm()">
                             <span class="modal__option-input"></span>
                             <label class="modal__option-label" for="black-stand">Black Edition Stand</label>
                             <h3 class="options__pledge modal-pledge">Pledge $75 or more</h3>
@@ -188,16 +207,19 @@
                             You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list.
                             Shipping is included.
                         </p>
-                        </div>
-                    <hr class="hr-line hidden">
-                    <div class="modal__option-bottom hidden">
-                        <label class="text" for="black-amount">Enter your pledge</label>
-                        <div class="modal__option-bottom-right">
-                            <div class="input-box">
-                                <input class="amount-input js-amount" type="text" name="black-amount" id="black-amount">
-                                <span class="dolar-sign">&#36; </span>
-                            </div>
-                            <button class="continue-btn js-continue">Continue</button>
+                    </div>
+                    <div class="on-selected hidden">
+                        <hr class="hr-line">
+                        <div class="modal__option-bottom">
+                            <label class="text" for="black-amount">Enter your pledge</label>
+                            <div class="modal__option-bottom-right">
+                                <div class="input-box">
+                                    <input class="amount-input js-amount js-amount-75" type="text" name="black-amount" id="black-amount"
+                                        onkeypress="return validateNumber(event)">
+                                    <span class="dolar-sign">&#36; </span>
+                                    </div>
+                                    <button class="continue-btn js-continue" onclick="handleDonation()">Continue</button>
+                                    </div>
                         </div>
                     </div>
                     </div>
@@ -213,16 +235,16 @@
                             member list. Shipping is included.
                             </p>
                     </div>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+                </div>
+                </div>
         </div>
         <div class="modal-completed js-modal-completed">
             <div class="icon-checked"><img src="./assets/icon-check.svg" alt="checked-icon"></div>
             <h1 class="modal-completed-title">Thanks for your support!</h1>
             <p class="modal-completed-text text">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor
                 Riser worldwide. You will get an email once our campaign is completed.</p>
-            <button class="modal-completed-btn">Got it!</button>
+            <button class="modal-completed-btn js-got-it">Got it!</button>
         </div>
         <div class="modal-overlay js-modal-overlay" id="modal-overlay"></div>
 <script src="./js/navbar.js"></script>
