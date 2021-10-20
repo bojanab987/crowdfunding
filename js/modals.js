@@ -6,6 +6,7 @@ const radioBtns = document.querySelectorAll('.js-radio-btn');
 const modalCompleted = document.querySelector('.js-modal-completed');
 const closeCompletedModaldBtn = document.querySelector('.js-got-it');
 
+
 const openModal = () => {
     modalEl.classList.add('modal-visible')
     modalEl.style.visibility = "visible";
@@ -17,12 +18,7 @@ const openModal = () => {
 backProjectBtn.addEventListener('click', openModal);
 getStartedLink.addEventListener('click', openModal);
 
-closeModalEl.addEventListener('click', () => {
-    modalEl.classList.remove('modal-visible');
-    let classes = modalEl.getAttribute('class')
-    console.log(classes)
-    overlay.classList.remove('modal-shown')
-});
+closeModalEl.addEventListener('click', closeDefaultModal);
 
 closeCompletedModaldBtn.addEventListener('click', () => {
     modalCompleted.classList.remove('visible');
@@ -68,25 +64,57 @@ function handleDonation() {
                         inputEls[i].value = '';
                         return;
                     }
+
                 }
+
             } else {
                 alert('Donation amount have to be higher than 0. Thank you!');
                 inputEls[i].value = '';
                 return;
             }
+
         });
+        increaseDonationAmount(inputEls[i].value);
+        inputEls[i].value = '';
     }
     closeDefaultModal();
     openCompletedModal();
+    incrementBackers();
+    increaseProgress();
 }
 
 function closeDefaultModal() {
     modalEl.classList.remove('modal-visible');
     modalEl.style.visibility = "hidden";
     modalEl.style.opacity = "0";
+    overlay.classList.remove('modal-shown');
 }
 
 function openCompletedModal() {
     modalCompleted.classList.add('visible');
     overlay.classList.add('modal-shown');
+}
+
+
+const totalDonationAmountEl = document.querySelector('.js-total-donation');
+const totalBackersEl = document.querySelector('.js-total-backers');
+const progressBarEl = document.querySelector('.js-progress-bar');
+
+let totalDonations = parseInt(totalDonationAmountEl.innerText.slice(1).replace(",", ""));
+let totalBackers = parseInt(totalBackersEl.innerText.replace(",", ""));
+function incrementBackers() {
+    totalBackers++;
+    totalBackersEl.innerText = totalBackers.toString();
+    return totalBackers;
+}
+const dolarSign = "$";
+function increaseDonationAmount(amount) {
+    console.log(amount)
+    totalDonations += Number(amount)
+    totalDonationAmountEl.innerText = `${dolarSign}${totalDonations}`;
+    return totalDonations;
+}
+
+function increaseProgress() {
+    progressBarEl.value = totalDonations;
 }
